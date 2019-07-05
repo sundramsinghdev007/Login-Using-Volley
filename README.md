@@ -8,7 +8,9 @@ Then,
 You have put these libraries in your build.gradle(app) file
  
 implementation 'com.android.support:design:28.0.0'
+
 implementation 'com.android.volley:volley:1.1.0'
+
 implementation 'com.basgeekball:awesome-validation:2.0'
 
 then sync the project and wait.
