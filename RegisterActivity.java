@@ -109,12 +109,25 @@ public class RegisterActivity extends AppCompatActivity {
                         // Hiding the progress dialog after all task complete.
                         progressDialog.dismiss();
                         //Toast.makeText(getApplicationContext(),response,Toast.LENGTH_LONG).show();
+                                 try {
+                            JSONObject object = new JSONObject(response);
 
-                        
+                            if (!object.getBoolean("error")) {
+                                Toast.makeText(getApplicationContext(), object.getString("message"), Toast.LENGTH_SHORT).show();
+
                                 //intent for jump to another activity
                                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                 startActivity(intent);
                                 finish();
+                            }
+                                     else {
+                                Toast.makeText(RegisterActivity.this, object.getString("message"), Toast.LENGTH_SHORT).show();
+
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                         
 
 
