@@ -130,17 +130,6 @@ public class LoginActivity extends AppCompatActivity {
                             if (!obj.getBoolean("error")) {
                                 Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
 
-                                    JSONObject userJson = obj.getJSONObject("user");
-                                //creating a new user object
-                                User user = new User(
-                                        userJson.getInt("id"),
-                                        userJson.getString("name"),
-                                        userJson.getString("mobilenumber"),
-                                        userJson.getString("gender"),
-                                        userJson.getString("address"),
-                                        userJson.getString("password")
-
-                                );
                                 //storing the user in shared preferences
                                 Toast.makeText(getApplicationContext(),"LogIn Successfull",Toast.LENGTH_SHORT).show();
                                 //write here your intent to jump on next activity
