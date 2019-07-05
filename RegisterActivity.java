@@ -110,40 +110,12 @@ public class RegisterActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                         //Toast.makeText(getApplicationContext(),response,Toast.LENGTH_LONG).show();
 
-                        try {
-                            JSONObject object = new JSONObject(response);
-
-                            if (!object.getBoolean("error")) {
-                                Toast.makeText(getApplicationContext(), object.getString("message"), Toast.LENGTH_SHORT).show();
-
-                                JSONObject userJSON = object.getJSONObject("user");
-                                Log.i("userJsonResponse", String.valueOf(userJSON));
-                                //creating a new user object
-                                User user = new User(
-                                        userJSON.getInt("id"),
-                                        userJSON.getString("name"),
-                                        userJSON.getString("mobilenumber"),
-                                        userJSON.getString("gender"),
-                                        userJSON.getString("address"),
-                                        userJSON.getString("password")
-
-                                );
-
-                                //storing the user data in sharedprefernce
-                                Config.getInstance(RegisterActivity.this).userRegister(user);
-
+                        
+                                //intent for jump to another activity
                                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                 startActivity(intent);
                                 finish();
-                            }
-                            else {
-                                Toast.makeText(RegisterActivity.this, object.getString("message"), Toast.LENGTH_SHORT).show();
-
-                            }
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                        
 
 
                     }
