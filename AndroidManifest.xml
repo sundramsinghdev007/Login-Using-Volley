@@ -17,44 +17,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".BeanTable"
-            android:label="Rate List"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".ViewCartActivity"
-            android:label="View Cart"
-            android:parentActivityName=".Dashboard"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Careers"
-            android:label="@string/careers"
-            android:parentActivityName=".Dashboard"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Gallery"
-            android:label="@string/our_gallery"
-            android:parentActivityName=".Dashboard"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ContactUs"
-            android:label="@string/contacus"
-            android:parentActivityName=".Dashboard"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".AboutUs"
-            android:label="@string/AboutUs"
-            android:parentActivityName=".Dashboard"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ProductDescription"
-            android:label="@string/product_detail"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".Dashboard"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".RegisterActivity"
             android:label="Register"
             android:parentActivityName=".HomeActivity"
@@ -68,15 +30,6 @@
             android:name=".HomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeHomeActivity" />
-
-        <receiver
-            android:name=".InternetConnector_Receiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            </intent-filter>
-        </receiver>
 
         <activity
             android:name=".SplashActivity"
